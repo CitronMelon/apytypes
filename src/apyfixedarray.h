@@ -175,6 +175,10 @@ public:
     //! summation across its own axis, treating Nan as 0.
     APyFixedArray nancumsum(std::optional<nb::int_> axis = std::nullopt) const;
 
+    // Return the maximum of an array or the maximum along an axis.
+    std::variant<APyFixedArray, APyFixed>
+    max(std::optional<std::variant<nb::tuple, nb::int_>> axis = std::nullopt) const;
+
     //! Python `__repr__()` function
     std::string repr() const;
 

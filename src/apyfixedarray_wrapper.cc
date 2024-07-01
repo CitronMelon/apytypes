@@ -634,6 +634,30 @@ void bind_fixed_array(nb::module_& m)
             )pbdoc"
         )
 
+        .def(
+            "max",
+            &APyFixedArray::max,
+            nb::arg("axis") = nb::none(),
+            R"pbdoc(
+            Returns the maximum value from an array or the maximum along an axis
+
+            Parameters
+            ----------
+            axis : tuple or int, optional
+                The axis to get the maximum along.
+
+            Returns
+            -------
+            :class:`APyFixedArray` or :class:`ApyFixed`
+
+            Raises
+            -------
+            :class:IndexError
+                If a specified axis is outside of the existing number of dimensions for the array.
+
+            )pbdoc"
+        )
+
         /*
          * Static methods
          */
